@@ -1,0 +1,74 @@
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+    /*padding-top: 20px;*/
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+    #menu {
+        padding-top: 20px;
+        margin-left: -194px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+}
+
+#navbar {
+    margin-bottom: 20px;
+    background-color: #E92727;
+    color: white !important;
+}
+
+.menu-link {
+    color: white !important;
+}
+
+.menu-link:hover {
+    color: darkgray !important;
+}
+
+.menu-link:active {
+    color: darkslategrey!important;
+}
+
+.product-tab {
+    color: black !important;
+
+}
+
+.search-bar {
+    padding-top: 20px;
+}
+
+.carousel-text {
+    padding: 60px;
+    position: relative;
+    bottom: 600px;
+}
+
+.card {
+    padding: 0px;
+    margin-bottom: 5px;
+    align-items: center;
+}
