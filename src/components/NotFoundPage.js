@@ -3,6 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Navbar from './Navbar'
+import Footer from './Footer'
+
 export class NotFoundPage extends React.Component {
   componentWillMount() {
     const { staticContext } = this.props;
@@ -12,12 +15,18 @@ export class NotFoundPage extends React.Component {
   }
 
   render() {
-    return (<div className="not-found">
-      <h1>404</h1>
-      <h2>Page not found!</h2>
-      <p>
-        <Link to="/">Go back to the main page</Link>
-      </p>
+    return (
+      <div>
+          <div className='container'>
+          <Navbar />
+          <div className="not-found">
+            <h1>Page not found!</h1>
+            <p>
+              <Link to="/">Go home</Link>
+            </p>
+          </div>
+      </div>
+      <Footer />
     </div>
     );
   }

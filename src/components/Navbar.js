@@ -2,16 +2,9 @@ import React from 'react'
 
 export const Navbar = props => (
   <div>
-    <nav className='navbar navbar-light navbar-toggleable-md bg-faded' id='navbar'>
-      <button className='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarCollapse'> <span className='navbar-toggler-icon' /> </button>
-      <a className='navbar-brand'>
-        <h2><img src='https://i.imgur.com/i9nQvGr.jpg' alt='Logo' />
-        </h2> </a>
-      <div className='collapse navbar-collapse flex-column ml-lg-0 ml-3' id='navbarCollapse'>
-
-        {/* <a className="btn btn-sm btn-primary" href="#">Log In</a>
-                    <a className="btn btn-sm btn-success" href="#">Create Account</a> */}
-
+    <div className='container'>
+      <div className='row'>
+        <h2 className='logo'><a href='/'><img src='https://i.imgur.com/i9nQvGr.jpg' alt='Logo' className='img-fluid' /></a></h2>
         <div className='ml-auto search-bar'>
           <div className='input-group'>
             <input className='form-control' type='text' placeholder='Enter Product or Catalog #' />
@@ -20,6 +13,15 @@ export const Navbar = props => (
             </span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <nav className='navbar navbar-light bg-faded' id='navbar'>
+      <div>
+
+        {/* <a className="btn btn-sm btn-primary" href="#">Log In</a>
+                    <a className="btn btn-sm btn-success" href="#">Create Account</a> */}
+
         <ul className='navbar-nav flex-row' id='menu'>
           <li className='nav-item active'> <a className='nav-link menu-link' href='#'>Products</a> </li>
           <li className='nav-item'> <a className='nav-link menu-link' href='/faqs'>FAQs</a> </li>
@@ -29,6 +31,7 @@ export const Navbar = props => (
         </ul>
       </div>
     </nav>
+
   </div>
 )
 
