@@ -12,9 +12,13 @@ body {
 
 @media (min-width: 992px) {
   #menu {
-      padding-top: 20px;
-      margin-left: -194px;
+      padding-top: 0px;
+      margin-left: 0px;
   }
+  .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 }
 
 @media (max-width: 992px) {
@@ -35,6 +39,7 @@ body {
 }
 
 #navbar {
+  margin-top: 20px;
   margin-bottom: 20px;
   background-color: #E92727;
   color: white !important;
@@ -49,7 +54,7 @@ body {
 }
 
 .menu-link:active {
-  color: darkslategrey!important;
+  color: rgb(51, 51, 51)!important;
 }
 
 .product-tab {
@@ -88,4 +93,8 @@ body {
 
 .card-block.faq {
   width: 100%
+}
+
+.search-bar {
+  width: 400px;
 }
