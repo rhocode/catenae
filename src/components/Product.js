@@ -52,72 +52,92 @@ export default class Product extends React.Component {
           { 'breadcrumb' }
           { /* <!--<li className="breadcrumb-item"><a href="#">${breadcrumbItem}</a></li>--> */ }
         </ol>
-        <h1 className='product-title'>{ this.state.PostTitle }</h1>
-        <div className='product-head row'>
-          <div className='col-xl-3 col-md-4 col-sm-5'><img src='http://via.placeholder.com/200x200' className='rounded' /></div>
-          <div className='col'>
-            <strong>Price</strong>
-            <span className='price-range'>{ this.state.Price }</span>
-            <br />
+        <div className='row' id='product-group-row'>
+          <div className='col-6 mr-auto'>
+            <h4>
+              <span className='product-group-sku'>03-31000</span>
+              <span className='product-group'>Human Normal PB CD19+ B Cells</span>
+            </h4>
+          </div>
+          <div className='col-6 align-self-end'>
             <div className='dropdown'>
-                <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                            Choose
-                          </button>
-                <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                            
-                            { 'productDropdown' }
-                    { /* <!--<a className="dropdown-item" href="#"></a>--> */ }
-                  </div>
+              <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                {this.state.PostTitle}
+              </button>
+              <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                { 'productDropdown' }
+                { /* <a className="dropdown-item" href="#"></a> */ }
               </div>
+            </div>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col'>
+            <p>
+              <strong className='price-range-label'>Range: </strong>
+              <span className='price-range'>$810-$990</span>
+            </p>
+          </div>
+        </div>
+        
+        <h2 className='product-title'>{ this.state.PostTitle }</h2>
+        <div className='product-head row'>
+          <div className='col-2'>
+            <p>
+              <strong className='price-label'>Price: </strong>
+              <span className='price'>{ this.state.Price }</span>
+            </p>
+          </div>
+          <div className='col-2 mr-auto'>
+            <p>
+              <strong className='sku-label'>SKU: </strong>
+              <span className='sku'>{'product-sku'}</span>
+            </p>
+          </div>
+          
+          <div className='col-4 align-self-end'>
+            <div className='input-group'>
+              <input type='number' className='form-control' placeholder='1' aria-label='number' />
+              <span className='input-group-btn'>
+                <button className='btn btn-danger' type='button'><i className='fa fa-shopping-cart' /> Add to cart</button>
+              </span>
+            </div>
           </div>
         </div>
         <br />
         <div className='product-body'>
-          <ul className='nav nav-pills' role='tablist'>
-            <li className='nav-item product-tab'>
-                <a className='nav-link active' data-toggle='tab' href='#description' role='tab'><h5>Description</h5></a>
-              </li>
-            <li className='nav-item product-tab'>
-                <a className='nav-link' data-toggle='tab' href='#specifications' role='tab'><h5>Specifications</h5></a>
-              </li>
-            <li className='nav-item product-tab'>
-                <a className='nav-link' data-toggle='tab' href='#resources' role='tab'><h5>Technical Resources</h5></a>
-              </li>
-          </ul>
-          <div className='tab-content'>
+          <div className=''>
             <br />
-            <div className='tab-pane active' id='description' role='tabpanel'>
-                          
-                          { this.state.Description }
-              </div>
-            <div className='tab-pane' id='specifications' role='tabpanel'>
-                          $
-                          { 'productSpecification' }
-                { /* <table className="table table-striped">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <tbody>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <th>Format</th>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td>Frozen</td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <th>Species</th>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td>Human</td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <th>Cell Source</th>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td>Peripheral Blood</td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <th>Cell Type</th>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <td>Plasma</td>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </tbody>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </table> */ }
-              </div>
-            <div className='tab-pane' id='resources' role='tabpanel'>
-                          $
-                          { 'productResources' }
-              </div>
+            <div className='' id='description'>
+              <h2>Description</h2>  
+              { this.state.Description }
+            </div>
+            <div className='' id='specifications'>
+              <h2>Specifications</h2>
+               <table className="table table-striped">
+                  <tbody>
+                      <tr>
+                          <th>Format</th>
+                          <td>Frozen</td>
+                      </tr>
+                      <tr>
+                          <th>Species</th>
+                          <td>Human</td>
+                      </tr>
+                      <tr>
+                          <th>Cell Source</th>
+                          <td>Peripheral Blood</td>
+                      </tr>
+                      <tr>
+                          <th>Cell Type</th>
+                          <td>Plasma</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div className='' id='resources'>
+              <a className='btn btn-danger' href='#'>Prepare Sample to Get Started</a>
+            </div>
           </div>
         </div>
       </div>
