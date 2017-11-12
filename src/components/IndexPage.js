@@ -1,15 +1,17 @@
-import React from 'react';
-import { AthleteCard } from './AthleteCard';
-import Navbar from './Navbar';
-import SearchCard from './SearchCard';
-import IndexCard from './IndexCard';
-import Footer from './Footer';
+import React from 'react'
+import { AthleteCard } from './AthleteCard'
+import Navbar from './Navbar'
+import SearchCard from './SearchCard'
+import IndexCard from './IndexCard'
+import Footer from './Footer'
 
 export const IndexPage = () => (
   <div>
-    <Navbar />
-    <SearchCard />
-    <IndexCard />
+    <div className='container'>
+      <Navbar />
+      <IndexCard />
+
+    </div>
     <Footer />
   </div>
   // <div className="home">
@@ -19,6 +21,6 @@ export const IndexPage = () => (
   //     )}
   //   </div>
   // </div>
-);
+)
 
-export default IndexPage;
+export default IndexPage

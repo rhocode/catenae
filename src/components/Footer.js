@@ -1,19 +1,18 @@
 
-
-import React from 'react';
+import React from 'react'
 
 export default class Footer extends React.Component {
-  render() {
-
+  render () {
     return (
-      <footer className="footer">
-        <div className="container text-center" style={{ 'width': '100%' }}>
-          <a className="" href="#">Terms and Conditions</a> |
-          <a className="" href="#">Information Request</a> |
-          <a className="" href="#">Site Map</a> |
-          <span className="text-muted">2017 Catenae Bio. All Rights Reserved.</span>
+      <footer className='footer'>
+        <div className='container text-center' style={{ 'width': '100%' }}>
+          <a className='' href='/terms'>Terms and Conditions</a> |&nbsp;
+          <a className='' href='/compliance'>Compliance</a> |&nbsp;
+          <a className='' href='/inforeq'>Information Request</a> |&nbsp;
+          {/* <a className='' href='#'>Site Map</a> |&nbsp; */}
+          <span className='text-muted'>2017 Catenae Bio. All Rights Reserved.</span>
         </div>
       </footer>
-    );
+    )
   }
 }
