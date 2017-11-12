@@ -14,9 +14,9 @@ export const InformationRequest = () => (
           Request Info
         </div>
         <div className='card-block faq'>
-          <h4 className='card-title'>Information Request</h4>
+          {/* <h4 className='card-title'>Information Request</h4> */}
           <div>
-            <form>
+            {/* <form>
               <div className='form-group'>
                 <label className='name'>Your Name*</label>
                 <input type='text' placeholder='Name' id='name' className='form-control' aria-describedby='namehelp' />
@@ -43,7 +43,8 @@ export const InformationRequest = () => (
                 <input type='text' placeholder='' id='qc' className='form-control' />
               </div>
               <button type='submit' className='btn btn-primary'>Submit Inquiry</button>
-            </form>
+            </form> */}
+            <iframe src='https://docs.google.com/forms/d/e/1FAIpQLSfoF2EqOJhCZTR5hkaeM1O8f6_7_dd5qxoKQlt3qBvulws6KQ/viewform?embedded=true' width='760' height='1500' scrolling="no">Loading...</iframe>
           </div>
         </div>
       </div>
