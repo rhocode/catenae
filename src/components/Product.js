@@ -19,11 +19,21 @@ export default class Product extends React.Component {
     super(props)
 
     var productSet = this;
+    const thisgroup = props.prod.substring(0, 2);
+    const thiscode = props.prod.substring(3, 5);
+    const thissize = props.prod.substring(5, 8);
+    // const thisGroup = snapshot.val()PostTitle
 
-    firebase.database().ref('/data/' + props.prod).once('value').then(function (snapshot) {
-      console.log(snapshot.val())
+    firebase.database().ref('/data/').orderByChild('ProductSku').startAt(thisgroup +  '-' + thiscode)
+    .endAt(thisgroup + '-' + thiscode + "\uf8ff").once('value').then(function (snapshot) {
+      var thisVal = snapshot.val()
+      var thisDict = thisVal[props.prod];
+      thisDict.productBase = thisVal[thisgroup + '-' + thiscode + '000']['PostTitle'];
+      delete thisVal[thisgroup + '-' + thiscode + '000']
+      thisDict.relatedProds= thisVal;
+      console.log(thisDict)
       productSet.setState(
-                snapshot.val()
+        thisDict            
             )
     })
 

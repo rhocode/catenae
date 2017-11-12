@@ -16,7 +16,12 @@ export const ContactPage = () => (
         <div className='card-block faq'>
           <h4 className='card-title'>Contact Us</h4>
           <p className='card-text'>
-    Contact Info or form Here
+    
+2215 Faraday Ave, Suite H <br />
+Carlsbad, California 92008
+<br />
+<br />
+(858) 480-9149
 </p>
 
         </div>
