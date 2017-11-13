@@ -88,7 +88,15 @@ export default class Product extends React.Component {
               </h4>
             </div>
             <div className='col-6 align-self-end'>
-              <div className='dropdown'>
+              <p>
+                <strong className='price-range-label'>Range: </strong>
+                <span className='price-range'>{this.state.priceRange}</span>
+              </p>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+            <div className='dropdown'>
                 <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                   {this.state.PostTitle}
                 </button>
@@ -101,14 +109,7 @@ export default class Product extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            <div className='col'>
-              <p>
-                <strong className='price-range-label'>Range: </strong>
-                <span className='price-range'>{this.state.priceRange}</span>
-              </p>
-            </div>
-          </div>
+          <br/>
 
           <h2 className='product-title'>{ this.state.PostTitle }</h2>
           <div className='product-head row'>
@@ -134,14 +135,15 @@ export default class Product extends React.Component {
               </div>
             </div>
           </div>
-          <br />
+          
           <div className='product-body'>
+            <br/>
             <div className=''>
-              <br />
               <div className='' id='description'>
                 <h2>Description</h2>
                 { this.state.Description }
               </div>
+              <br/>
               <div className='' id='specifications'>
                 <h2>Specifications</h2>
                 <table className='table table-striped'>
