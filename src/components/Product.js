@@ -79,101 +79,103 @@ export default class Product extends React.Component {
           { 'breadcrumb' }
           { /* <!--<li className="breadcrumb-item"><a href="#">${breadcrumbItem}</a></li>--> */ }
         </ol>
-        <div className='row' id='product-group-row'>
-          <div className='col-6 mr-auto'>
-            <h4>
-              <span className='product-group-sku'>{this.state.GroupSku}</span>
-              <span className='product-group'>{this.state.GroupTitle}</span>
-            </h4>
-          </div>
-          <div className='col-6 align-self-end'>
-            <div className='dropdown'>
-              <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                {this.state.PostTitle}
-              </button>
-              <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                {
+        <div className='container'>
+          <div className='row' id='product-group-row'>
+            <div className='col-6 mr-auto'>
+              <h4>
+                <span className='product-group-sku'>{this.state.GroupSku}</span>
+                <span className='product-group'>{this.state.GroupTitle}</span>
+              </h4>
+            </div>
+            <div className='col-6 align-self-end'>
+              <div className='dropdown'>
+                <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                  {this.state.PostTitle}
+                </button>
+                <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                  {
                     this.state.prodDropdown
                 }
-                { /* <a className="dropdown-item" href="#"></a> */ }
+                  { /* <a className="dropdown-item" href="#"></a> */ }
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col'>
-            <p>
-              <strong className='price-range-label'>Range: </strong>
-              <span className='price-range'>{this.state.priceRange}</span>
-            </p>
-          </div>
-        </div>
-
-        <h2 className='product-title'>{ this.state.PostTitle }</h2>
-        <div className='product-head row'>
-          <div className='col-2'>
-            <p>
-              <strong className='price-label'>Price: </strong>
-              <span className='price'>{ this.state.Price }</span>
-            </p>
-          </div>
-          <div className='col-2 mr-auto'>
-            <p>
-              <strong className='sku-label'>SKU: </strong>
-              <span className='sku'>{this.props.prod}</span>
-            </p>
+          <div className='row'>
+            <div className='col'>
+              <p>
+                <strong className='price-range-label'>Range: </strong>
+                <span className='price-range'>{this.state.priceRange}</span>
+              </p>
+            </div>
           </div>
 
-          <div className='col-4 align-self-end'>
-            <div className='input-group'>
-              <input type='number' className='form-control' placeholder='1' aria-label='number' />
-              <span className='input-group-btn'>
-                <button className='btn btn-danger' type='button'><i className='fa fa-shopping-cart' /> Add to cart</button>
-              </span>
+          <h2 className='product-title'>{ this.state.PostTitle }</h2>
+          <div className='product-head row'>
+            <div className='col-2'>
+              <p>
+                <strong className='price-label'>Price: </strong>
+                <span className='price'>{ this.state.Price }</span>
+              </p>
+            </div>
+            <div className='col-2 mr-auto'>
+              <p>
+                <strong className='sku-label'>SKU: </strong>
+                <span className='sku'>{this.props.prod}</span>
+              </p>
+            </div>
+
+            <div className='col-4 align-self-end'>
+              <div className='input-group'>
+                <input type='number' className='form-control' placeholder='1' aria-label='number' />
+                <span className='input-group-btn'>
+                  <button className='btn btn-danger' type='button'><i className='fa fa-shopping-cart' /> Add to cart</button>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <br />
-        <div className='product-body'>
-          <div className=''>
-            <br />
-            <div className='' id='description'>
-              <h2>Description</h2>
-              { this.state.Description }
-            </div>
-            <div className='' id='specifications'>
-              <h2>Specifications</h2>
-              <table className='table table-striped'>
-                <tbody>
-                  <tr>
-                    <th>Format</th>
-                    <td>{this.state.Format}</td>
-                  </tr>
-                  <tr>
-                    <th>Species</th>
-                    <td>{this.state.Source}</td>
-                  </tr>
-                  <tr>
-                    <th>Gauranteed Viability</th>
-                    <td>{this.state.GauranteedViability}</td>
-                  </tr>
-                  <tr>
-                    <th>Gauranteed Purity</th>
-                    <td>{this.state.GauranteedPurity}</td>
-                  </tr>
-                  <tr>
-                    <th>Collection/Isolation</th>
-                    <td>{this.state.CollectionOrIsolationProcedure}</td>
-                  </tr>
-                  <tr>
-                    <th>Anticoagulant</th>
-                    <td>{this.state.Anticoagulant}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className='' id='resources'>
-              <a className='btn btn-danger' href='https://drive.google.com/file/d/1uWVjZmpyJitmcXpOjuAaCT2E3JSTrsXz/view?usp=sharing'>Prepare Sample to Get Started</a>
+          <br />
+          <div className='product-body'>
+            <div className=''>
+              <br />
+              <div className='' id='description'>
+                <h2>Description</h2>
+                { this.state.Description }
+              </div>
+              <div className='' id='specifications'>
+                <h2>Specifications</h2>
+                <table className='table table-striped'>
+                  <tbody>
+                    <tr>
+                      <th>Format</th>
+                      <td>{this.state.Format}</td>
+                    </tr>
+                    <tr>
+                      <th>Species</th>
+                      <td>{this.state.Source}</td>
+                    </tr>
+                    <tr>
+                      <th>Gauranteed Viability</th>
+                      <td>{this.state.GauranteedViability}</td>
+                    </tr>
+                    <tr>
+                      <th>Gauranteed Purity</th>
+                      <td>{this.state.GauranteedPurity}</td>
+                    </tr>
+                    <tr>
+                      <th>Collection/Isolation</th>
+                      <td>{this.state.CollectionOrIsolationProcedure}</td>
+                    </tr>
+                    <tr>
+                      <th>Anticoagulant</th>
+                      <td>{this.state.Anticoagulant}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className='' id='resources'>
+                <a className='btn btn-danger' href='https://drive.google.com/file/d/1uWVjZmpyJitmcXpOjuAaCT2E3JSTrsXz/view?usp=sharing'>Prepare Sample to Get Started</a>
+              </div>
             </div>
           </div>
         </div>

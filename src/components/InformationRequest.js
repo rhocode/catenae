@@ -9,11 +9,9 @@ export const InformationRequest = () => (
   <div>
     <div className='container'>
       <Navbar />
-      <div className='card'>
-        <div className='card-header faq'>
-          Request Info
-        </div>
-        <div className='card-block faq'>
+      <div className='container'>
+        <h1>Information Request</h1>
+        <div className=''>
           {/* <h4 className='card-title'>Information Request</h4> */}
           <div>
             {/* <form>
@@ -44,7 +42,10 @@ export const InformationRequest = () => (
               </div>
               <button type='submit' className='btn btn-primary'>Submit Inquiry</button>
             </form> */}
-            <iframe src='https://docs.google.com/forms/d/e/1FAIpQLSfoF2EqOJhCZTR5hkaeM1O8f6_7_dd5qxoKQlt3qBvulws6KQ/viewform?embedded=true' width='760' height='1500' scrolling="no">Loading...</iframe>
+            <iframe src='https://docs.google.com/forms/d/e/1FAIpQLSfoF2EqOJhCZTR5hkaeM1O8f6_7_dd5qxoKQlt3qBvulws6KQ/viewform?embedded=true' width='100%' height='1500' scrolling="no">
+            Loading...<br />
+            Click <a href='https://docs.google.com/forms/d/e/1FAIpQLSfoF2EqOJhCZTR5hkaeM1O8f6_7_dd5qxoKQlt3qBvulws6KQ/viewform?embedded=true' target='_blank' rel='noopener noreferrer'>here</a> if form does not load.
+            </iframe>
           </div>
         </div>
       </div>
