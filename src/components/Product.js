@@ -18,29 +18,56 @@ export default class Product extends React.Component {
   constructor (props) {
     super(props)
 
-    var productSet = this;
-    const thisgroup = props.prod.substring(0, 2);
-    const thiscode = props.prod.substring(3, 5);
-    const thissize = props.prod.substring(5, 8);
+    var productSet = this
+    const thisgroup = props.prod.substring(0, 2)
+    const thiscode = props.prod.substring(3, 5)
+    const thissize = props.prod.substring(5, 8)
     // const thisGroup = snapshot.val()PostTitle
-
-    firebase.database().ref('/data/').orderByChild('ProductSku').startAt(thisgroup +  '-' + thiscode)
-    .endAt(thisgroup + '-' + thiscode + "\uf8ff").once('value').then(function (snapshot) {
+    firebase.database().ref('/data/').orderByChild('ProductSku').startAt(thisgroup + '-' + thiscode)
+    .endAt(thisgroup + '-' + thiscode + '\uf8ff').once('value').then(function (snapshot) {
       var thisVal = snapshot.val()
-      var thisDict = thisVal[props.prod];
-      thisDict.productBase = thisVal[thisgroup + '-' + thiscode + '000']['PostTitle'];
+
+      var thisDict = thisVal[props.prod]
+      thisDict.GroupTitle = thisVal[thisgroup + '-' + thiscode + '000']['PostTitle']
       delete thisVal[thisgroup + '-' + thiscode + '000']
-      thisDict.relatedProds= thisVal;
+      thisDict.relatedProds = thisVal
+      thisDict.GroupSku = thisgroup + '-' + thiscode + '000'
       console.log(thisDict)
-      productSet.setState(
-        thisDict            
-            )
+      var prices = []
+      Object.keys(thisVal).map(function (key, index) {
+        prices.push(parseInt(thisVal[key].Price.substring(1)))
+      })
+
+      thisDict.priceRange = '$' + Math.min(...prices) + '-$' + Math.max(...prices)
+      var prods = []
+      var first = null
+      Object.keys(thisDict.relatedProds).map(function (key, index) {
+        if (!first) { first = key }
+        prods.push({name: thisDict.relatedProds[key].PostTitle, sku: '/products/' + key, key: key})
+      })
+      thisDict.prodDropdown = prods.map((obj) => <a className='dropdown-item' key={obj.key} href={obj.sku}>{obj.name}</a>)
+
+      if (thissize === '000') {
+        window.location.href = '/products/' + first
+      } else {
+        productSet.setState(thisDict)
+      }
     })
 
     this.state = {
       PostTitle: '',
       Price: '',
-      Description: ''
+      Description: '',
+      GroupSku: '',
+      GroupTitle: '',
+      Format: '',
+      Source: '',
+      GauranteedViability: '',
+      GauranteedPurity: '',
+      CollectionOrIsolationProcedure: '',
+      Anticoagulant: '',
+      relatedProds: {},
+      prodDropdown: null
     }
   }
 
@@ -55,8 +82,8 @@ export default class Product extends React.Component {
         <div className='row' id='product-group-row'>
           <div className='col-6 mr-auto'>
             <h4>
-              <span className='product-group-sku'>03-31000</span>
-              <span className='product-group'>Human Normal PB CD19+ B Cells</span>
+              <span className='product-group-sku'>{this.state.GroupSku}</span>
+              <span className='product-group'>{this.state.GroupTitle}</span>
             </h4>
           </div>
           <div className='col-6 align-self-end'>
@@ -65,7 +92,9 @@ export default class Product extends React.Component {
                 {this.state.PostTitle}
               </button>
               <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                { 'productDropdown' }
+                {
+                    this.state.prodDropdown
+                }
                 { /* <a className="dropdown-item" href="#"></a> */ }
               </div>
             </div>
@@ -75,11 +104,11 @@ export default class Product extends React.Component {
           <div className='col'>
             <p>
               <strong className='price-range-label'>Range: </strong>
-              <span className='price-range'>$810-$990</span>
+              <span className='price-range'>{this.state.priceRange}</span>
             </p>
           </div>
         </div>
-        
+
         <h2 className='product-title'>{ this.state.PostTitle }</h2>
         <div className='product-head row'>
           <div className='col-2'>
@@ -91,10 +120,10 @@ export default class Product extends React.Component {
           <div className='col-2 mr-auto'>
             <p>
               <strong className='sku-label'>SKU: </strong>
-              <span className='sku'>{'product-sku'}</span>
+              <span className='sku'>{this.props.prod}</span>
             </p>
           </div>
-          
+
           <div className='col-4 align-self-end'>
             <div className='input-group'>
               <input type='number' className='form-control' placeholder='1' aria-label='number' />
@@ -109,34 +138,42 @@ export default class Product extends React.Component {
           <div className=''>
             <br />
             <div className='' id='description'>
-              <h2>Description</h2>  
+              <h2>Description</h2>
               { this.state.Description }
             </div>
             <div className='' id='specifications'>
               <h2>Specifications</h2>
-               <table className="table table-striped">
-                  <tbody>
-                      <tr>
-                          <th>Format</th>
-                          <td>Frozen</td>
-                      </tr>
-                      <tr>
-                          <th>Species</th>
-                          <td>Human</td>
-                      </tr>
-                      <tr>
-                          <th>Cell Source</th>
-                          <td>Peripheral Blood</td>
-                      </tr>
-                      <tr>
-                          <th>Cell Type</th>
-                          <td>Plasma</td>
-                      </tr>
-                  </tbody>
+              <table className='table table-striped'>
+                <tbody>
+                  <tr>
+                    <th>Format</th>
+                    <td>{this.state.Format}</td>
+                  </tr>
+                  <tr>
+                    <th>Species</th>
+                    <td>{this.state.Source}</td>
+                  </tr>
+                  <tr>
+                    <th>Gauranteed Viability</th>
+                    <td>{this.state.GauranteedViability}</td>
+                  </tr>
+                  <tr>
+                    <th>Gauranteed Purity</th>
+                    <td>{this.state.GauranteedPurity}</td>
+                  </tr>
+                  <tr>
+                    <th>Collection/Isolation</th>
+                    <td>{this.state.CollectionOrIsolationProcedure}</td>
+                  </tr>
+                  <tr>
+                    <th>Anticoagulant</th>
+                    <td>{this.state.Anticoagulant}</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className='' id='resources'>
-              <a className='btn btn-danger' href='#'>Prepare Sample to Get Started</a>
+              <a className='btn btn-danger' href='https://drive.google.com/file/d/1uWVjZmpyJitmcXpOjuAaCT2E3JSTrsXz/view?usp=sharing'>Prepare Sample to Get Started</a>
             </div>
           </div>
         </div>
