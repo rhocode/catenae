@@ -66,29 +66,29 @@ export default class CartPage extends React.Component {
               <h2 className="title">Contact info</h2>
                 <form>
                   <div class="form-group">
-                      <label for="name">Your Name*</label>
-                      <input type="text" placeholder="Name" id="name" className="form-control" aria-describedby="namehelp"></input>
-                      <small id="namehelp">First and Last name</small>
+                    <label for="name">Your Name*</label>
+                    <input type="text" placeholder="Name" id="name" className="form-control" aria-describedby="namehelp" required></input>
+                    <small id="namehelp">First and Last name</small>
                   </div>
                   <div className="form-group">
-                      <label for="title">Title</label>
-                      <input type="text" placeholder="Title" id="title" className="form-control"></input>
+                    <label for="title">Title</label>
+                    <input type="text" placeholder="Title" id="title" className="form-control"></input>
                   </div>
                   <div className="form-group">
-                      <label for="org">Your Organization*</label>
-                      <input type="text" placeholder="Organization" id="org" className="form-control"></input>
+                    <label for="org">Your Organization*</label>
+                    <input type="text" placeholder="Organization" id="org" className="form-control" required></input>
                   </div>
                   <div className="form-group">
-                      <label for="phone">Phone Number</label>
-                      <input type="tel" placeholder="Phone" id="phone" className="form-control"></input>
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" placeholder="Phone" id="phone" className="form-control" required></input>
                   </div>
                   <div className="form-group">
-                      <label for="email">Email Address*</label>
-                      <input type="email" placeholder="Email" id="email" className="form-control"></input>
+                    <label for="email">Email Address*</label>
+                    <input type="email" placeholder="Email" id="email" className="form-control" required></input>
                   </div>
                   <div className="form-group">
-                      <label for="qc">Questions/Comments</label>
-                      <input type="text" placeholder="" id="qc" className="form-control"></input>
+                    <label for="qc">Questions/Comments</label>
+                    <input type="text" placeholder="" id="qc" className="form-control"></input>
                   </div>
                   <button type="submit" className="btn btn-primary">Request Quote</button>
                 </form>

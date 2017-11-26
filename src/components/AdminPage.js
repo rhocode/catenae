@@ -41,8 +41,8 @@ export default class AdminPage extends React.Component {
     return (<div>
       <div className='container'>
         <Navbar />
-        <div className='container'>
-          <h1>My Cart</h1>
+        <div className='admin-card'>
+          <h1>Order# <span className='order'>000</span></h1>
           <div className='row'>
             <div className='col' id='cartlist'>
               <table className='table table-striped'>
@@ -64,34 +64,14 @@ export default class AdminPage extends React.Component {
             </div>
             <div className='col' id='contact'>
               <h2 className="title">Contact info</h2>
-                <form>
-                  <div class="form-group">
-                      <label for="name">Your Name*</label>
-                      <input type="text" placeholder="Name" id="name" className="form-control" aria-describedby="namehelp"></input>
-                      <small id="namehelp">First and Last name</small>
-                  </div>
-                  <div className="form-group">
-                      <label for="title">Title</label>
-                      <input type="text" placeholder="Title" id="title" className="form-control"></input>
-                  </div>
-                  <div className="form-group">
-                      <label for="org">Your Organization*</label>
-                      <input type="text" placeholder="Organization" id="org" className="form-control"></input>
-                  </div>
-                  <div className="form-group">
-                      <label for="phone">Phone Number</label>
-                      <input type="tel" placeholder="Phone" id="phone" className="form-control"></input>
-                  </div>
-                  <div className="form-group">
-                      <label for="email">Email Address*</label>
-                      <input type="email" placeholder="Email" id="email" className="form-control"></input>
-                  </div>
-                  <div className="form-group">
-                      <label for="qc">Questions/Comments</label>
-                      <input type="text" placeholder="" id="qc" className="form-control"></input>
-                  </div>
-                  <button type="submit" className="btn btn-primary">Request Quote</button>
-                </form>
+              <div>
+                <p>Name: <span className='name'></span></p>
+                <p>Title: <span className='title'></span></p>
+                <p>Organization: <span className='org'></span></p>
+                <p>Phone: <span className='phone'></span></p>
+                <p>Email: <span className='email'></span></p>
+                <p>Qs/Comments: <span className='comments'></span></p>
+              </div>
             </div>
           </div>
         </div>
