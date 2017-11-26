@@ -17,11 +17,16 @@ if (!firebase.apps.length) {
 }
 
 export default class SearchContainer extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor (...args) {
+    super(...args)
+  }
+
+  componentDidMount(){
+
   }
 
   render () {
+    console.log(this.props)
     return (
     <div>
       <div className='container' id='notfound'>
