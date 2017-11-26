@@ -23,11 +23,11 @@ export const Navbar = props => (
                     <a className="btn btn-sm btn-success" href="#">Create Account</a> */}
 
         <ul className='navbar-nav flex-row' id='menu'>
-          <li className='nav-item active'> <a className='nav-link menu-link' href='#'>Products</a> </li>
+          <li className='nav-item active'> <a className='nav-link menu-link' href='/products'>Products</a> </li>
           <li className='nav-item'> <a className='nav-link menu-link' href='/faqs'>FAQs</a> </li>
           <li className='nav-item'> <a className='nav-link menu-link' href='/about'>About Us</a> </li>
           <li className='nav-item'> <a className='nav-link menu-link' href='/contact'>Contact</a> </li>
-          <li className='nav-item ml-auto'> <a className='nav-link menu-link' href='#'><strong><i className='fa fa-shopping-cart' /> My Cart (<span id='cart-num'>0</span>)</strong></a> </li>
+          <li className='nav-item ml-auto'> <a className='nav-link menu-link' href='/cart'><strong><i className='fa fa-shopping-cart' /> My Cart (<span id='cart-num'>0</span>)</strong></a> </li>
         </ul>
       </div>
     </nav>

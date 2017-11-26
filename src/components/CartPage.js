@@ -41,114 +41,62 @@ export default class CartPage extends React.Component {
     return (<div>
       <div className='container'>
         <Navbar />
-        <ol className='breadcrumb'>
-          { 'breadcrumb' }
-          { /* <!--<li className="breadcrumb-item"><a href="#">${breadcrumbItem}</a></li>--> */ }
-        </ol>
         <div className='container'>
-          <div className='row' id='product-group-row'>
-            <div className='col-6 mr-auto'>
-              <h4>
-                <span className='product-group-sku'>{this.state.GroupSku}</span>
-                <span className='product-group'>{this.state.GroupTitle}</span>
-              </h4>
-            </div>
-            <div className='col-6 align-self-end'>
-              <p>
-                <strong className='price-range-label'>Range: </strong>
-                <span className='price-range'>{this.state.priceRange}</span>
-              </p>
-            </div>
-          </div>
+          <h1>My Cart</h1>
           <div className='row'>
-            <div className='col'>
-            <div className='dropdown'>
-                <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                  {this.state.PostTitle}
-                </button>
-                <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                  {
-                    this.state.prodDropdown
-                }
-                  { /* <a className="dropdown-item" href="#"></a> */ }
-                </div>
-              </div>
+            <div className='col' id='cartlist'>
+              <table className='table table-striped'>
+                <thead>
+                  <tr>
+                    <th>Item SKU</th>
+                    <th>Item name</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-          <br/>
-
-          <h2 className='product-title'>{ this.state.PostTitle }</h2>
-          <div className='product-head row'>
-            <div className='col-2'>
-              <p>
-                <strong className='price-label'>Price: </strong>
-                <span className='price'>{ this.state.Price }</span>
-              </p>
-            </div>
-            <div className='col-2 mr-auto'>
-              <p>
-                <strong className='sku-label'>SKU: </strong>
-                <span className='sku'>{this.props.prod}</span>
-              </p>
-            </div>
-
-            <div className='col-4 align-self-end'>
-              <div className='input-group'>
-                <input type='number' className='form-control' placeholder='1' aria-label='number' />
-                <span className='input-group-btn'>
-                  <button className='btn btn-danger' type='button'><i className='fa fa-shopping-cart' /> Add to cart</button>
-                </span>
-              </div>
-            </div>
-          </div>
-          
-          <div className='product-body'>
-            <br/>
-            <div className=''>
-              <div className='' id='description'>
-                <h2>Description</h2>
-                { this.state.Description }
-              </div>
-              <br/>
-              <div className='' id='specifications'>
-                <h2>Specifications</h2>
-                <table className='table table-striped'>
-                  <tbody>
-                    <tr>
-                      <th>Format</th>
-                      <td>{this.state.Format}</td>
-                    </tr>
-                    <tr>
-                      <th>Species</th>
-                      <td>{this.state.Source}</td>
-                    </tr>
-                    <tr>
-                      <th>Gauranteed Viability</th>
-                      <td>{this.state.GauranteedViability}</td>
-                    </tr>
-                    <tr>
-                      <th>Gauranteed Purity</th>
-                      <td>{this.state.GauranteedPurity}</td>
-                    </tr>
-                    <tr>
-                      <th>Collection/Isolation</th>
-                      <td>{this.state.CollectionOrIsolationProcedure}</td>
-                    </tr>
-                    <tr>
-                      <th>Anticoagulant</th>
-                      <td>{this.state.Anticoagulant}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className='' id='resources'>
-                <a className='btn btn-danger' href='https://drive.google.com/file/d/1uWVjZmpyJitmcXpOjuAaCT2E3JSTrsXz/view?usp=sharing'>Prepare Sample to Get Started</a>
-              </div>
+            <div className='col' id='contact'>
+              <h2 className="title">Contact info</h2>
+                <form>
+                  <div class="form-group">
+                      <label for="name">Your Name*</label>
+                      <input type="text" placeholder="Name" id="name" className="form-control" aria-describedby="namehelp"></input>
+                      <small id="namehelp">First and Last name</small>
+                  </div>
+                  <div className="form-group">
+                      <label for="title">Title</label>
+                      <input type="text" placeholder="Title" id="title" className="form-control"></input>
+                  </div>
+                  <div className="form-group">
+                      <label for="org">Your Organization*</label>
+                      <input type="text" placeholder="Organization" id="org" className="form-control"></input>
+                  </div>
+                  <div className="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" placeholder="Phone" id="phone" className="form-control"></input>
+                  </div>
+                  <div className="form-group">
+                      <label for="email">Email Address*</label>
+                      <input type="email" placeholder="Email" id="email" className="form-control"></input>
+                  </div>
+                  <div className="form-group">
+                      <label for="qc">Questions/Comments</label>
+                      <input type="text" placeholder="" id="qc" className="form-control"></input>
+                  </div>
+                  <button type="submit" className="btn btn-primary">Request Quote</button>
+                </form>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+    <Footer />
     </div>)
   }
 }
