@@ -12,7 +12,9 @@ const config = {
   messagingSenderId: '703503072802'
 }
 
-firebase.initializeApp(config)
+if (!firebase.apps.length) {
+    firebase.initializeApp(config)
+}
 
 export default class Product extends React.Component {
   constructor (props) {

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Layout } from './Layout'
 import { IndexPage } from './IndexPage'
 import { ProductsPage } from './ProductsPage'
+import { SearchPage } from './SearchPage'
 import { AthletePage } from './AthletePage'
 import { NotFoundPage } from './NotFoundPage'
 import { AboutUsPage } from './AboutUsPage'
@@ -21,6 +22,7 @@ const renderAboutUsPage = () => <AboutUsPage />
 const renderContactPage = () => <ContactPage />
 const renderTermsPage = () => <TermsPage />
 const renderCompliancePage = () => <CompliancePage />
+const renderSearchPage = () => <SearchPage />
 const renderInformationRequest = () => <InformationRequest />
 const renderProduct = ({ match, staticContext }) => <Product prod={match.params.prod} />
 const renderAthlete = ({ match, staticContext }) => {
@@ -54,6 +56,7 @@ export const App = () => (
       <Route exact path='/inforeq' render={renderInformationRequest} />
       <Route exact path='/compliance' render={renderCompliancePage} />
       <Route exact path='/athlete/:id' render={renderAthlete} />
+      <Route exact path='/search' render={renderSearchPage} />
       <Route component={NotFoundPage} />
     </Switch>
   </Layout>
