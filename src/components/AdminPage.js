@@ -41,8 +41,8 @@ export default class AdminPage extends React.Component {
     return (<div>
       <div className='container'>
         <Navbar />
-        <div className='container'>
-          <h1>My Cart</h1>
+        <div className='admin-card'>
+          <h1>Order# <span className='order'>000</span></h1>
           <div className='row'>
             <div className='col' id='cartlist'>
               <table className='table table-striped'>
