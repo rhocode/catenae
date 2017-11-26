@@ -24,7 +24,7 @@ const renderContactPage = () => <ContactPage />
 const renderTermsPage = () => <TermsPage />
 const renderCompliancePage = () => <CompliancePage />
 const renderCartPage = () => <CartPage />
-const renderSearchPage = () => <SearchPage />
+const renderSearchPage = ({ match, staticContext }) => <SearchPage query={match.params.query} />
 const renderInformationRequest = () => <InformationRequest />
 const renderProduct = ({ match, staticContext }) => <Product prod={match.params.prod} />
 const renderAthlete = ({ match, staticContext }) => {
@@ -58,7 +58,7 @@ export const App = () => (
       <Route exact path='/inforeq' render={renderInformationRequest} />
       <Route exact path='/compliance' render={renderCompliancePage} />
       <Route exact path='/athlete/:id' render={renderAthlete} />
-      <Route exact path='/search' render={renderSearchPage} />
+      <Route exact path='/search/:query' render={renderSearchPage} />
       <Route exact path='/cart' render={renderCartPage} />
       <Route component={NotFoundPage} />
     </Switch>

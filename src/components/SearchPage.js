@@ -5,11 +5,11 @@ import ProductsContainer from './ProductsContainer'
 import Footer from './Footer'
 import SearchContainer from './SearchContainer'
 
-export const SearchPage = () => (
+export const SearchPage = (props) => (
   <div>
     <div className='container'>
       <Navbar />
-      <SearchContainer />
+      <SearchContainer query={props.query}/>
     </div>
     <Footer />
   </div>
