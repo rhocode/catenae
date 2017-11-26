@@ -22,7 +22,28 @@ export default class SearchContainer extends React.Component {
   }
 
   render () {
-    return (<div>
-    </div>)
+    return (
+    <div>
+      <div className='container' id='notfound'>
+        <h1>No results found.</h1>
+      </div>
+      <div className='container' id='results'>
+      <table className='table table-striped'>
+        <thead>
+          <tr>
+            <th>Item SKU</th>
+            <th>Item name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    )
   }
 }
