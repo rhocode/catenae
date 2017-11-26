@@ -14,6 +14,7 @@ import {InformationRequest} from './InformationRequest'
 import CartPage from './CartPage'
 import { FAQ } from './FAQ'
 import Product from './Product'
+import AdminPage from './AdminPage'
 import athletes from '../data/athletes'
 
 const renderIndex = () => <IndexPage />
@@ -23,6 +24,7 @@ const renderAboutUsPage = () => <AboutUsPage />
 const renderContactPage = () => <ContactPage />
 const renderTermsPage = () => <TermsPage />
 const renderCompliancePage = () => <CompliancePage />
+const renderAdminPage = () => <AdminPage />
 const renderCartPage = () => <CartPage />
 const renderSearchPage = ({ match, staticContext }) => <SearchPage query={match.params.query} />
 const renderInformationRequest = () => <InformationRequest />
@@ -60,6 +62,7 @@ export const App = () => (
       <Route exact path='/athlete/:id' render={renderAthlete} />
       <Route exact path='/search/:query' render={renderSearchPage} />
       <Route exact path='/cart' render={renderCartPage} />
+      <Route exact path='/admin' render={renderAdminPage} />
       <Route component={NotFoundPage} />
     </Switch>
   </Layout>
