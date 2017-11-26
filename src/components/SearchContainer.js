@@ -33,20 +33,20 @@ export default class SearchContainer extends React.Component {
         <h1>No results found.</h1>
       </div>
       <div className='container' id='results'>
-      <table className='table table-striped'>
-        <thead>
-          <tr>
-            <th>Item SKU</th>
-            <th>Item name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th></th>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+        <table className='table table-striped'>
+          <thead>
+            <tr>
+              <th>Item SKU</th>
+              <th>Item name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     )
