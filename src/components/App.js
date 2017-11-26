@@ -11,6 +11,7 @@ import { ContactPage } from './ContactPage'
 import { TermsPage } from './TermsPage'
 import { CompliancePage } from './CompliancePage'
 import {InformationRequest} from './InformationRequest'
+import CartPage from './CartPage'
 import { FAQ } from './FAQ'
 import Product from './Product'
 import athletes from '../data/athletes'
@@ -22,6 +23,7 @@ const renderAboutUsPage = () => <AboutUsPage />
 const renderContactPage = () => <ContactPage />
 const renderTermsPage = () => <TermsPage />
 const renderCompliancePage = () => <CompliancePage />
+const renderCartPage = () => <CartPage />
 const renderSearchPage = () => <SearchPage />
 const renderInformationRequest = () => <InformationRequest />
 const renderProduct = ({ match, staticContext }) => <Product prod={match.params.prod} />
@@ -57,6 +59,7 @@ export const App = () => (
       <Route exact path='/compliance' render={renderCompliancePage} />
       <Route exact path='/athlete/:id' render={renderAthlete} />
       <Route exact path='/search' render={renderSearchPage} />
+      <Route exact path='/cart' render={renderCartPage} />
       <Route component={NotFoundPage} />
     </Switch>
   </Layout>
