@@ -7,15 +7,11 @@ export default class ProductsContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="card-columns">
+        <div className="card-deck">
           { /* {athletes.map(athleteData => <AthletePreview key={athleteData.id} {...athleteData} />)} */}
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard title={"Human"}/>
+          <ProductCard title={"Human Diseased"}/>
+          <ProductCard title={"Non-Human"}/>
         </div>
       </div>
     );

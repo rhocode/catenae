@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
           <a className='' href='/compliance'>Compliance</a> |&nbsp;
           <a className='' href='/inforeq'>Information Request</a> |&nbsp;
           {/* <a className='' href='#'>Site Map</a> |&nbsp; */}
-          <span className='text-muted'>2017 Catenae Bio. All Rights Reserved.</span>
+          <span className='text-muted'>©2017 Catenae Bio. All Rights Reserved.</span>
         </div>
       </footer>
     )

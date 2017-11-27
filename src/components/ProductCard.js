@@ -1,24 +1,20 @@
 
-
-import React from 'react';
+import React from 'react'
 
 export default class ProductCard extends React.Component {
-  render() {
+  render () {
     const searchStyle = {
       'marginLeft': '50px',
-      'marginRight': '50px',
-    };
+      'marginRight': '50px'
+    }
 
     return (
-        <div className="card">
-          <img className="thumbnail card-img-top img-fluid" src="http://via.placeholder.com/318x200" alt="Card image cap" style={{ 'maxHeight': 'auto', 'width': '100%' }} />
-          <div className="card-block">
-            <h4 className="card-title">Card title</h4>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
-          </div>
+      <div onClick={function (err) { console.log(err) }}className='card' style={{'color': 'none', 'border': 'none'}}>
+        <img className='thumbnail card-img-top img-fluid' src='https://imgur.com/1oLyMvD.jpg' alt='Card image cap' style={{ 'maxHeight': 'auto', 'width': '200px' }} />
+        <div className='card-block text-center'>
+          <h4 className='card-title'>{this.props.title}</h4>
         </div>
-    );
+      </div>
+    )
   }
 }
-
