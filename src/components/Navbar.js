@@ -21,7 +21,7 @@ class Navbar extends React.Component {
     return (<div>
       <div className='container'>
         <div className='row'>
-          <h2 className='logo'><a href='/'><img src='https://i.imgur.com/i9nQvGr.jpg' alt='Logo' className='img-fluid' /></a></h2>
+          <h2 className='logo'><a href='/'><img src='https://i.imgur.com/3He1qFE.jpg' alt='Logo' className='img-fluid' /></a></h2>
           <div className='ml-auto search-bar'>
             <div className='input-group'>
               <input id='textelem' onKeyDown={this.handleClick2} className='form-control' type='text' placeholder='Enter Product or Catalog #' />
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
                     <a className="btn btn-sm btn-success" href="#">Create Account</a> */}
 
           <ul className='navbar-nav flex-row' id='menu'>
-            <li className='nav-item active'> <a className='nav-link menu-link' href='/search/all'>Products</a> </li>
+            <li className='nav-item active'> <a className='nav-link menu-link' href='/products'>Products</a> </li>
             <li className='nav-item'> <a className='nav-link menu-link' href='/faqs'>FAQs</a> </li>
             <li className='nav-item'> <a className='nav-link menu-link' href='/about'>About Us</a> </li>
             <li className='nav-item'> <a className='nav-link menu-link' href='/contact'>Contact</a> </li>
