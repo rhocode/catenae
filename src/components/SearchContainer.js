@@ -23,7 +23,34 @@ export default class SearchContainer extends React.Component {
     firebase.database().ref('/data/').orderByChild('ProductSku').once('value').then(function (snapshot) {
       var thisVal = snapshot.val()
       console.log(props)
-      if (props.query === 'all') {
+      if (props.query === 'special-search-human') {
+        const filtered = Object.keys(thisVal).filter(key => key.substring(5, 8) === '000').filter(key => thisVal[key].Source.trim() === 'Human Normal').reduce((obj, key) => {
+          obj[key] = thisVal[key].PostTitle
+          return obj
+        }, {})
+        thisObj.setState({
+          ready: true,
+          objs: filtered
+        })
+      } else if (props.query === 'special-search-humand') {
+        const filtered = Object.keys(thisVal).filter(key => key.substring(5, 8) === '000').filter(key => thisVal[key].Source.trim() === 'Human Diseased').reduce((obj, key) => {
+          obj[key] = thisVal[key].PostTitle
+          return obj
+        }, {})
+        thisObj.setState({
+          ready: true,
+          objs: filtered
+        })
+      } else if (props.query === 'special-search-nhuman') {
+        const filtered = Object.keys(thisVal).filter(key => key.substring(5, 8) === '000').filter(key => thisVal[key].Source.trim() === 'Non-Human').reduce((obj, key) => {
+          obj[key] = thisVal[key].PostTitle
+          return obj
+        }, {})
+        thisObj.setState({
+          ready: true,
+          objs: filtered
+        })
+      } else if (props.query === 'all') {
         const filtered = Object.keys(thisVal).filter(key => key.substring(5, 8) === '000').reduce((obj, key) => {
           obj[key] = thisVal[key].PostTitle
           return obj
@@ -79,7 +106,7 @@ export default class SearchContainer extends React.Component {
     return (
       <div> {!this.state.ready
       ? (<div className='container' id='notfound'>
-        <h1>{this.state.found ? 'loading...' : 'No results found.'}</h1>
+        <h1>{this.state.found ? '' : 'No results found.'}</h1>
       </div>)
       : (<div className='container' id='results'>
         <table className='table table-striped'>
