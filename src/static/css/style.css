@@ -10,22 +10,13 @@ body {
   margin-bottom: 60px;
 }
 
-@media (min-width: 992px) {
-  #menu {
-      padding-top: 0px;
-      margin-left: 0px;
-  }
-  .nav-item {
+.nav-item {
     margin-left: 10px;
-    margin-right: 10px;
-}
+    height: 100%;
 }
 
-@media (max-width: 992px) {
-  .nav-item {
-      margin-left: 10px;
-      margin-right: 10px;
-  }
+#menu {
+  height: 100%;
 }
 
 .footer {
@@ -39,10 +30,11 @@ body {
 }
 
 #navbar {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #E92727;
   color: white !important;
+  font-size: 20px;
 }
 
 .menu-link {
@@ -66,25 +58,10 @@ body {
   padding-top: 20px;
 }
 
-.carousel-text {
-  padding: 60px;
-  position: relative;
-  bottom: 600px;
-}
-
 .card {
   padding: 0px;
   margin-bottom: 5px;
   align-items: center;
-}
-
-.carousel .item img {
-  left: -9999px;  /*important */
-  right: -9999px;  /*important */
-  margin: 0 auto;  /*important */
-  max-width: none;  /*important */
-  min-width: 100%;
-  position: absolute;
 }
 
 .card-header.faq {

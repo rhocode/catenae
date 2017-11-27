@@ -9,14 +9,47 @@ export default class IndexCard extends React.Component {
     }
 
     return (
+      <div id="carouselindicator" className="carousel slide" data-ride="carousel" data-interval="10000">
+        <ol className="carousel-indicators">
+          <li data-target="#carouselindicator" data-slide-to="0" className="active"></li>
+          <li data-target="#carouselindicator" data-slide-to="1"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img className="d-block w-100 img-fluid" src="https://i.imgur.com/sh1v1bF.png" alt="First slide"></img>
+            <div className="carousel-caption d-none d-md-block">
+              <h1>We Offer Human Hematologic Products with High Quality and Competitive Prices</h1>
+              <p>Catenae Bio provides a reliable supply of hematologic products to support therapeutic research taking place in academia and the biotech industry. Our normal human cells are sourced from healthy peripheral blood, mobilized peripheral blood, bone marrow, or cord blood, while diseased cells are isolated from either peripheral blood or bone marrow. Cells in fresh and frozen formats are immuno-magnetically selected by highly trained laboratory professionals and we guarantee they are of top quality. We take pride in delivering quality products to you. For those who need hematologic cells with unique specifications, we will try our best to comply. Please let us know if you have any questions or concerns regarding our products.
+              </p>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100 img-fluid" src="https://i.imgur.com/GEo0oGF.png" alt="Second slide"></img>
+            <div className='carousel-caption d-none d-md-block'>
+            <h1>We provide a Good Collection of Diseased Human Cells</h1>
+            <p>We currently offer hematologic products covering 38 human diseases. They can be whole blood, serum, plasma, or PBMC from humans in each disease type. Our diseased samples are obtained from patients when they become available to our network of clinicians. Some disease types may have a long backorder depending on the frequency of the disease occurrence in the general population. All samples come from fully consented IRB approved collections.</p>
+            </div>
+          </div>
+        </div>
+        <a className="carousel-control-prev" href="#carouselindicator" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carouselindicator" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+
+/*
       <div className='row'>
         <div className='col-md-12'>
           <div style={{ 'width': '100%', 'height': '580px' }}>
             <div id='carousel-home' className='carousel slide' data-ride='carousel'>
               <div className='carousel-inner' role='listbox'>
-                <div className='carousel-item active'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x550' alt='First slide' /> </div>
-                <div className='carousel-item'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x550' alt='Second slide' /> </div>
-                <div className='carousel-item'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x550' alt='Third slide' /> </div>
+                <div className='carousel-item active'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x580' alt='First slide' /> </div>
+                <div className='carousel-item'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x580' alt='Second slide' /> </div>
+                <div className='carousel-item'> <img className='d-block img-fluid' src='http://via.placeholder.com/1080x580' alt='Third slide' /> </div>
               </div>
             </div>
             <div className='carousel-text'>
@@ -37,42 +70,7 @@ export default class IndexCard extends React.Component {
             </div>
           </div>
         </div>
-        <div className='col-md-2' />
-        <div className='col-md-8'>
-          <div className='card text-center' style={{ 'width': '100%' }}>
-            <h4 className='card-header' style={{ 'width': '100%' }}>We Offer Diseased Cells as follows:</h4>
-            <div className='card-block'>
-              <div className='row' style={searchStyle}>
-                <ul className='list-group' style={{ 'width': '100%' }}>
-                  <li className='list-group-item'>ALL BM MNC (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>ALL PB MNC (Newly Diagnosed / Untreated</li>
-                  <li className='list-group-item'>AML B CD34+ Cells (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>AML BM MNC (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>AML PB MNC (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>AML PB Plasma (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL BM CD19+/CD5+ B Cells (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL BM MNC (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL BM Plasma (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL PB CD19+/CD5+ B Cells (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL PB MNC (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CLL PB Plasma (Newly Diagnosed / Untreated)</li>
-                  <li className='list-group-item'>CML BM MNC (Chronic Phase)</li>
-                  <li className='list-group-item'>CML PB Plasma (Chronic Phase)</li>
-                  <li className='list-group-item'>CML PBMC (Newly Diagnosed)</li>
-                  <li className='list-group-item'>Crohn's Disease Plasma</li>
-                  <li className='list-group-item'>Prostate Cancer PB MNC</li>
-                  <li className='list-group-item'>Psoriasis Plasma</li>
-                  <li className='list-group-item'>Rheumatoid Arthritis Plasma</li>
-                  <li className='list-group-item'>Systemic Lupus Erythematosus Plasma</li>
-                  <li className='list-group-item'>Ulcerative Colitis Plasma</li>
-                  <li className='list-group-item'>Ulcerative Colitis WB MNC</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='col-md-2' />
-      </div>
+      </div>*/
     )
   }
 }

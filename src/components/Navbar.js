@@ -17,7 +17,6 @@ export const Navbar = props => (
     </div>
 
     <nav className='navbar navbar-light bg-faded' id='navbar'>
-      <div>
 
         {/* <a className="btn btn-sm btn-primary" href="#">Log In</a>
                     <a className="btn btn-sm btn-success" href="#">Create Account</a> */}
@@ -29,7 +28,6 @@ export const Navbar = props => (
           <li className='nav-item'> <a className='nav-link menu-link' href='/contact'>Contact</a> </li>
           <li className='nav-item ml-auto'> <a className='nav-link menu-link' href='/cart'><strong><i className='fa fa-shopping-cart' /> My Cart (<span id='cart-num'>0</span>)</strong></a> </li>
         </ul>
-      </div>
     </nav>
 
   </div>
