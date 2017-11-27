@@ -48,10 +48,6 @@ export const FAQ = () => (
         <p>
         They are available upon request.
         </p>
-        <h4>Where can I download the Material Safety Data Sheets (MSDS)?</h4>
-        <p>
-        Please go to Downloads/Material Safety Data Sheet, enter the catalog number for the product and click Search.
-        </p>
         <h4>Are there special shipping dates for PromoCell proliferating cells?</h4>
         <p>
         Our proliferating cultures are generally dispatched on Mondays (delivery on Tuesday) and on Thursdays (delivery on Friday). To the US and Canada, we only ship proliferating cells on Mondays.
